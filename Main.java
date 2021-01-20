@@ -1,4 +1,4 @@
-import java.util.Scanner; 
+import java.util.*; 
 public class Main{
     public static void main(String[] args) {
 
@@ -7,9 +7,14 @@ public class Main{
         boolean sortir = false;
         //Nombre de la opció elegida
         int opcio;
-        int nalumnes = 0;
+        int nalumnes = 5;
         int mida = 50;
         String[] agenda = new String [mida];
+        agenda[0] = "Garcia";
+        agenda[1] = "Roman";
+        agenda[2] = "Pasalamar";
+        agenda[3] = "Rkouni";
+        agenda[4] = "Girbes";
         
 
 
@@ -53,14 +58,14 @@ public class Main{
             System.out.println(blau_fluix_subrrallat + "                        "+ blanc);
              
             opcio = entrada.nextInt();
-            Scanner close;
-             
+            
             //Opcions del menú
             switch(opcio){
                 case 1:
                     System.out.println("Posa un cognom d'un alumne");
-                    agenda[nalumnes] = entrada.nextLine();
                     nalumnes ++;
+                    agenda[nalumnes] = entrada.next();
+                    System.out.println("Llegeix: " + agenda[nalumnes]);
                     break;
 
                 case 2:
@@ -106,5 +111,3 @@ public class Main{
         }
     }
 }
-
-
