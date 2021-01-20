@@ -7,6 +7,11 @@ public class Main{
         boolean sortir = false;
         //Nombre de la opció elegida
         int opcio;
+        int nalumnes = 0;
+        int mida = 50;
+        String[] agenda = new String [mida];
+        
+
 
         //Colors i subratllat
         String negre="\033[30m"; 
@@ -48,11 +53,14 @@ public class Main{
             System.out.println(blau_fluix_subrrallat + "                        "+ blanc);
              
             opcio = entrada.nextInt();
+            Scanner close;
              
             //Opcions del menú
             switch(opcio){
                 case 1:
-                    System.out.println("1");
+                    System.out.println("Posa un cognom d'un alumne");
+                    agenda[nalumnes] = entrada.nextLine();
+                    nalumnes ++;
                     break;
 
                 case 2:
