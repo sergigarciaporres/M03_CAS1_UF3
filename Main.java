@@ -3,10 +3,12 @@ public class Main{
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
+        //Sortida menú
         boolean sortir = false;
+        //Nombre de la opció elegida
         int opcio;
 
-        //Colors
+        //Colors i subratllat
         String negre="\033[30m"; 
         String roig="\033[31m"; 
         String verd="\033[32m"; 
@@ -24,6 +26,7 @@ public class Main{
         String blanc_fluix_subrrallat="\u001B[47m";
         String blanc="\u001B[0m";
 
+        //Menú principal
         while(!sortir){
             System.out.println(blau_fluix_subrrallat + "                        "+ blanc);
             System.out.println(blau_fluix_subrrallat + "  " + blanc + "                    " + blau_fluix_subrrallat + "  " + blanc );
@@ -46,6 +49,7 @@ public class Main{
              
             opcio = entrada.nextInt();
              
+            //Opcions del menú
             switch(opcio){
                 case 1:
                     System.out.println("1");
