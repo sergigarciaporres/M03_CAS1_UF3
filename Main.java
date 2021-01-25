@@ -7,7 +7,7 @@ public class Main{
         boolean sortir = false;
         //Nombre de la opció elegida
         int opcio;
-        int nalumnes = 5;
+        int nalumnes = 4;
         int mida = 50;
         String[] agenda = new String [mida];
         agenda[0] = "Garcia";
@@ -67,7 +67,6 @@ public class Main{
                     System.out.println("Posa un cognom d'un alumne");
                     nalumnes ++;
                     agenda[nalumnes] = entrada.next();
-                    System.out.println(agenda[5]);
                     break;
                 //Localitzar
                 case 2:
@@ -96,8 +95,8 @@ public class Main{
                 //Imprimir
                 case 8:
                     System.out.println("\nAquests són els alumnes actuals:\n");
-                    for(int x = 0 ; x < nalumnes ; x++){
-                        System.out.println(x + "." + agenda[x]);
+                    for(int x = 0 ; x <= nalumnes ; x++){
+                        System.out.println((x + 1) + "." + agenda[x]);
                     }
                     System.out.println("");
                     break;
