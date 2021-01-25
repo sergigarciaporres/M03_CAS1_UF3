@@ -20,44 +20,44 @@ public class Main{
 
 
         //Colors i subratllat
-        final String negre="\033[30m"; 
-        final String roig="\033[31m"; 
-        final String verd="\033[32m"; 
-        final String groc="\033[33m"; 
-        final String blau="\033[34m"; 
-        final String violeta="\033[35m"; 
-        final String blau_fluix="\033[36m";
-        final String negre_subrrallat="\u001B[40m";
-        final String roig_subrrallat="\u001B[41m";
-        final String verd_subrrallat="\u001B[42m";
-        final String groc_subrrallat="\u001B[43m";
-        final String blau_subrrallat="\u001B[44m";
-        final String violeta_subrrallat="\u001B[45m";
-        final String blau_fluix_subrrallat="\u001B[46m";
-        final String blanc_fluix_subrrallat="\u001B[47m";
-        final String blanc="\u001B[0m";
+        final String NEGRE="\033[30m"; 
+        final String ROIG="\033[31m"; 
+        final String VERD="\033[32m"; 
+        final String GROC="\033[33m"; 
+        final String BLAU="\033[34m"; 
+        final String VIOLETA="\033[35m"; 
+        final String BLAU_FLUIX="\033[36m";
+        final String NEGRE_SUBRRALLAT="\u001B[40m";
+        final String ROIG_SUBRRALLAT="\u001B[41m";
+        final String VERD_SUBRALLAT="\u001B[42m";
+        final String GROC_SUBRALLAT="\u001B[43m";
+        final String BLAU_SUBRALLAT="\u001B[44m";
+        final String VIOLETA_SUBRRALLAT="\u001B[45m";
+        final String BLAU_FLUIX_SUBRRALLAT="\u001B[46m";
+        final String BLANC_FLUIX_SUBRRALLAT="\u001B[47m";
+        final String BLANC="\u001B[0m";
 
         //Menú principal
         while(!sortir){
             System.out.println("");
-            System.out.println(blau_fluix_subrrallat + "                        "+ blanc);
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "                    " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "  "+ blanc + verd + "   " + "Trieu un nombre" + blanc + "  " + blau_fluix_subrrallat + "  "+ blanc);
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "                    " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "                        "+ blanc);                              
-            System.out.println(blau_fluix_subrrallat + "  "+ blanc + "                    "+ blau_fluix_subrrallat + "  "+ blanc);
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "  " + "1. Inserir" + "        " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "  " + "2. Localitzar" + "     " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "  " + "3. Recuperar" + "      " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "  " + "4. Suprimir" + "       " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "  " + "5. Suprimir dada" + "  " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "  " + "6. Anular" + "         " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "  " + "7. Primer/Darrer" + "  " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "  " + "8. Imprimir" + "       " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "  " + "9. Ordenar" + "        " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "  " + "10. Sortir" + "        " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "  " + blanc + "                    " + blau_fluix_subrrallat + "  " + blanc );
-            System.out.println(blau_fluix_subrrallat + "                        "+ blanc);
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "                        "+ BLANC);
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "                    " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  "+ BLANC + VERD + "   " + "Trieu un nombre" + BLANC + "  " + BLAU_FLUIX_SUBRRALLAT + "  "+ BLANC);
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "                    " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "                        "+ BLANC);                              
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  "+ BLANC + "                    "+ BLAU_FLUIX_SUBRRALLAT + "  "+ BLANC);
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "  " + "1. Inserir" + "        " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "  " + "2. Localitzar" + "     " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "  " + "3. Recuperar" + "      " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "  " + "4. Suprimir" + "       " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "  " + "5. Suprimir dada" + "  " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "  " + "6. Anular" + "         " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "  " + "7. Primer/Darrer" + "  " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "  " + "8. Imprimir" + "       " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "  " + "9. Ordenar" + "        " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "  " + "10. Sortir" + "        " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "                    " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
+            System.out.println(BLAU_FLUIX_SUBRRALLAT + "                        "+ BLANC);
              
             opcio = entrada.nextInt();
             
@@ -145,7 +145,7 @@ public class Main{
                     break;
                 //Error
                  default:
-                    System.out.println(roig + "\nERROR! Selecciona un nombre entre 1 i 10. Gràcies =D\n" + blanc);
+                    System.out.println(ROIG + "\nERROR! Selecciona un nombre entre 1 i 10. Gràcies =D\n" + BLANC);
 
             }
         }
