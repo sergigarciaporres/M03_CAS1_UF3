@@ -7,7 +7,7 @@ public class Main{
         boolean sortir = false;
         //Nombre de la opció elegida
         int opcio;
-        //Nombre index del array
+        // Compta el número d'alumnes que tenim a agenda
         int nalumnes = 5;
         int mida = 50;
         String[] agenda = new String [mida];
