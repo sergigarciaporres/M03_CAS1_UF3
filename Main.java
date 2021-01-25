@@ -63,7 +63,7 @@ public class Main{
             
             //Opcions del menú
             switch(opcio){
-                //Inserir
+                //Inserir FALTA ACABAR
                 case 1:
                  /* Si llista plena 
                     ** informar que no es pot inserir o que s'esborraran dades */
@@ -87,7 +87,7 @@ public class Main{
                     System.out.println("3");
                     break;
 
-                //Suprimir nombre
+                //Suprimir nombre FALTA ACABAR
                 case 4:
                     System.out.println("\nAquests són els alumnes actuals:\n");
                     for(int x = 0 ; x <= nalumnes ; x++){
