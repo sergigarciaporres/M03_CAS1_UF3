@@ -69,9 +69,9 @@ public class Main{
                     ** informar que no es pot inserir o que s'esborraran dades */
                     /* cas contrari 
                    
-Insereix element x en la posició p (p és una posició coherent els elements es desplacen a la dreta, si cal)
-Augmenta en 1 controlador de numero d’elements
-Imprimeix llista després de la inserció*/
+                Insereix element x en la posició p (p és una posició coherent els elements es desplacen a la dreta, si cal)
+                Augmenta en 1 controlador de numero d’elements
+                Imprimeix llista després de la inserció*/
                     System.out.println("Posa un cognom d'un alumne");
                     nalumnes ++;
                     agenda[nalumnes] = entrada.next();
@@ -107,8 +107,8 @@ Imprimeix llista després de la inserció*/
                     for(int x = 0 ; x < nalumnes ; x++){
                         System.out.println((x + 1) + "." + agenda[x]);
                     }
-                    System.out.println("Estàs segur de voler borrar tota l'agenda?");
-                    System.out.println("Si/No");
+                    System.out.println("\nEstàs segur de voler borrar tota l'agenda?\n");
+                    System.out.println("\nSi/No\n");
                     String si = entrada.next();
                     if(si.compareToIgnoreCase("si") == 0){
                         nalumnes = 0;
@@ -124,8 +124,8 @@ Imprimeix llista després de la inserció*/
 
                 //Imprimir
                 case 8:
-                    if(nalumnes < 0){
-                        System.out.println("No hi han alumnes per mostrar");
+                    if(nalumnes <= 0){
+                        System.out.println("\nNo hi han alumnes per mostrar\n");
                     }else{
                         System.out.println("\nAquests són els alumnes actuals:\n");
                         for(int x = 0 ; x < nalumnes ; x++){
