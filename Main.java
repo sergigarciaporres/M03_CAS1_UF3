@@ -9,8 +9,8 @@ public class Main{
         int opcio;
         // Compta el número d'alumnes que tenim a agenda
         int nalumnes = 5;
-        int mida = 50;
-        String[] agenda = new String [mida];
+        final int MIDA = 50;
+        String[] agenda = new String [MIDA];
         agenda[0] = "Garcia";
         agenda[1] = "Roman";
         agenda[2] = "Pasalamar";
@@ -20,22 +20,22 @@ public class Main{
 
 
         //Colors i subratllat
-        String negre="\033[30m"; 
-        String roig="\033[31m"; 
-        String verd="\033[32m"; 
-        String groc="\033[33m"; 
-        String blau="\033[34m"; 
-        String violeta="\033[35m"; 
-        String blau_fluix="\033[36m";
-        String negre_subrrallat="\u001B[40m";
-        String roig_subrrallat="\u001B[41m";
-        String verd_subrrallat="\u001B[42m";
-        String groc_subrrallat="\u001B[43m";
-        String blau_subrrallat="\u001B[44m";
-        String violeta_subrrallat="\u001B[45m";
-        String blau_fluix_subrrallat="\u001B[46m";
-        String blanc_fluix_subrrallat="\u001B[47m";
-        String blanc="\u001B[0m";
+        final String negre="\033[30m"; 
+        final String roig="\033[31m"; 
+        final String verd="\033[32m"; 
+        final String groc="\033[33m"; 
+        final String blau="\033[34m"; 
+        final String violeta="\033[35m"; 
+        final String blau_fluix="\033[36m";
+        final String negre_subrrallat="\u001B[40m";
+        final String roig_subrrallat="\u001B[41m";
+        final String verd_subrrallat="\u001B[42m";
+        final String groc_subrrallat="\u001B[43m";
+        final String blau_subrrallat="\u001B[44m";
+        final String violeta_subrrallat="\u001B[45m";
+        final String blau_fluix_subrrallat="\u001B[46m";
+        final String blanc_fluix_subrrallat="\u001B[47m";
+        final String blanc="\u001B[0m";
 
         //Menú principal
         while(!sortir){
