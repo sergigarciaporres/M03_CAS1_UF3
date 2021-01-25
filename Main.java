@@ -5,9 +5,10 @@ public class Main{
         Scanner entrada = new Scanner(System.in);
         //Sortida menú
         boolean sortir = false;
-        
-        int opcio;         //Nombre de la opció elegida
-        int nalumnes = 5;  // Compta el número d'alumnes que tenim a agenda
+        //Nombre de la opció elegida
+        int opcio;
+        //Nombre index del array
+        int nalumnes = 5;
         int mida = 50;
         String[] agenda = new String [mida];
         agenda[0] = "Garcia";
@@ -64,7 +65,7 @@ public class Main{
             switch(opcio){
                 //Inserir
                 case 1:
-                    /* Si llista plena 
+                 /* Si llista plena 
                     ** informar que no es pot inserir o que s'esborraran dades */
                     /* cas contrari 
                    
@@ -75,38 +76,65 @@ Imprimeix llista després de la inserció*/
                     nalumnes ++;
                     agenda[nalumnes] = entrada.next();
                     break;
+
                 //Localitzar
                 case 2:
                     System.out.println("2");
                     break;
+
                 //Recuperar
                 case 3:
                     System.out.println("3");
                     break;
-                //Suprimir
+
+                //Suprimir nombre
                 case 4:
-                    System.out.println("4");
+                    System.out.println("\nAquests són els alumnes actuals:\n");
+                    for(int x = 0 ; x <= nalumnes ; x++){
+                        System.out.println((x + 1) + "." + agenda[x]);
+                }
+                    System.out.println("Escriu el nombre de l'alumne que voleu eliminar:");
                     break;
+
                 //Suprimir dada
                 case 5:
                     System.out.println("5");
                     break;
+
                 //Anular
                 case 6:
-                    System.out.println("6");
+                    System.out.println("\nAquests són els alumnes actuals:\n");
+                    for(int x = 0 ; x < nalumnes ; x++){
+                        System.out.println((x + 1) + "." + agenda[x]);
+                    }
+                    System.out.println("Estàs segur de voler borrar tota l'agenda?");
+                    System.out.println("Si/No");
+                    String si = entrada.next();
+                    if(si.compareToIgnoreCase("si") == 0){
+                        nalumnes = 0;
+                        
+
+                    }                       
                     break;
+                    
                 //Primer/Darrer
                 case 7:
                     System.out.println("7");
                     break;
+
                 //Imprimir
                 case 8:
-                    System.out.println("\nAquests són els alumnes actuals:\n");
-                    for(int x = 0 ; x <= nalumnes ; x++){
-                        System.out.println((x + 1) + "." + agenda[x]);
+                    if(nalumnes < 0){
+                        System.out.println("No hi han alumnes per mostrar");
+                    }else{
+                        System.out.println("\nAquests són els alumnes actuals:\n");
+                        for(int x = 0 ; x < nalumnes ; x++){
+                            System.out.println((x + 1) + "." + agenda[x]);
+                        }
                     }
                     System.out.println("");
                     break;
+
                 //Ordenar
                 case 9:
                     System.out.println("9");
