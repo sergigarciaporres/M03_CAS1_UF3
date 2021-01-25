@@ -38,6 +38,7 @@ public class Main{
 
         //Menú principal
         while(!sortir){
+            System.out.println("");
             System.out.println(blau_fluix_subrrallat + "                        "+ blanc);
             System.out.println(blau_fluix_subrrallat + "  " + blanc + "                    " + blau_fluix_subrrallat + "  " + blanc );
             System.out.println(blau_fluix_subrrallat + "  "+ blanc + verd + "   " + "Trieu un nombre" + blanc + "  " + blau_fluix_subrrallat + "  "+ blanc);
@@ -61,49 +62,54 @@ public class Main{
             
             //Opcions del menú
             switch(opcio){
+                //Inserir
                 case 1:
                     System.out.println("Posa un cognom d'un alumne");
                     nalumnes ++;
                     agenda[nalumnes] = entrada.next();
-                    System.out.println("Llegeix: " + agenda[nalumnes]);
+                    System.out.println(agenda[5]);
                     break;
-
+                //Localitzar
                 case 2:
                     System.out.println("2");
                     break;
-
+                //Recuperar
                 case 3:
                     System.out.println("3");
                     break;
-
+                //Suprimir
                 case 4:
                     System.out.println("4");
                     break;
-
+                //Suprimir dada
                 case 5:
                     System.out.println("5");
                     break;
-
+                //Anular
                 case 6:
                     System.out.println("6");
                     break;
-
+                //Primer/Darrer
                 case 7:
                     System.out.println("7");
                     break;
-
+                //Imprimir
                 case 8:
-                    System.out.println("8");
+                    System.out.println("\nAquests són els alumnes actuals:\n");
+                    for(int x = 0 ; x < nalumnes ; x++){
+                        System.out.println(x + "." + agenda[x]);
+                    }
+                    System.out.println("");
                     break;
-
+                //Ordenar
                 case 9:
                     System.out.println("9");
                     break;
-
+                //Sortir
                 case 10:
                     sortir = true;
                     break;
-
+                //Error
                  default:
                     System.out.println(roig + "\nERROR! Selecciona un nombre entre 1 i 10. Gràcies =D\n" + blanc);
 
