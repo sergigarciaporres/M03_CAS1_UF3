@@ -108,7 +108,7 @@ public class Main{
                         System.out.println((x + 1) + "." + agenda[x]);
                     }
                     System.out.println("\nEstàs segur de voler borrar tota l'agenda?\n");
-                    System.out.println("\nSi/No\n");
+                    System.out.println("Si/No\n");
                     String si = entrada.next();
                     if(si.compareToIgnoreCase("si") == 0){
                         nalumnes = 0;
