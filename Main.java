@@ -5,9 +5,9 @@ public class Main{
         Scanner entrada = new Scanner(System.in);
         //Sortida menú
         boolean sortir = false;
-        //Nombre de la opció elegida
-        int opcio;
-        int nalumnes = 4;
+        
+        int opcio;         //Nombre de la opció elegida
+        int nalumnes = 5;  // Compta el número d'alumnes que tenim a agenda
         int mida = 50;
         String[] agenda = new String [mida];
         agenda[0] = "Garcia";
@@ -64,6 +64,13 @@ public class Main{
             switch(opcio){
                 //Inserir
                 case 1:
+                    /* Si llista plena 
+                    ** informar que no es pot inserir o que s'esborraran dades */
+                    /* cas contrari 
+                   
+Insereix element x en la posició p (p és una posició coherent els elements es desplacen a la dreta, si cal)
+Augmenta en 1 controlador de numero d’elements
+Imprimeix llista després de la inserció*/
                     System.out.println("Posa un cognom d'un alumne");
                     nalumnes ++;
                     agenda[nalumnes] = entrada.next();
