@@ -73,7 +73,7 @@ public class Main{
                 Insereix element x en la posició p (p és una posició coherent els elements es desplacen a la dreta, si cal)
                 Augmenta en 1 controlador de numero d’elements
                 Imprimeix llista després de la inserció*/
-                    System.out.println("Posa un cognom d'un alumne");
+                    System.out.println( VERD + "Posa un cognom d'un alumne" + BLANC );
                     nalumnes ++;
                     agenda[nalumnes] = entrada.next();
                     break;
@@ -90,11 +90,11 @@ public class Main{
 
                 //Suprimir nombre FALTA ACABAR
                 case 4:
-                    System.out.println("\nAquests són els alumnes actuals:\n");
+                    System.out.println(VERD + "\nAquests són els alumnes actuals:\n" + BLANC );
                     for(int x = 0 ; x <= nalumnes ; x++){
-                        System.out.println((x + 1) + "." + agenda[x]);
+                        System.out.println(VIOLETA + (x + 1) + "." + agenda[x] + BLANC );
                 }
-                    System.out.println("Escriu el nombre de l'alumne que voleu eliminar:");
+                    System.out.println(VERD + "Escriu el nombre de l'alumne que voleu eliminar:" + BLANC );
                     break;
 
                 //Suprimir dada
@@ -104,20 +104,21 @@ public class Main{
 
                 //Anular
                 case 6:
-                    System.out.println("\nAquests són els alumnes actuals:\n");
+                    System.out.println(VERD + "\nAquests són els alumnes actuals:\n" + BLANC );
                     
                     for(int x = 0 ; x < nalumnes ; x++){
                        
-                        System.out.println((x + 1) + "." + agenda[x]);
+                        System.out.println(VERD + (x + 1) + "." + agenda[x] + BLANC);
                     }
                     
-                    System.out.println("\nEstàs segur de voler borrar tota l'agenda?\n");
-                    System.out.println("Si/No\n");
+                    System.out.println(VERD + "\nEstàs segur de voler borrar tota l'agenda?\n" + BLANC );
+                    System.out.println(VERD + "Si/No\n" + BLANC );
                     String si = entrada.next();
                     
                     if(si.compareToIgnoreCase("si") == 0){
                         
                         nalumnes = 0;
+                        System.out.println(VERD + "\nLa llista ha estat esborrada correctament!\n" + BLANC );
                         
                     }                       
                     break;
@@ -128,23 +129,23 @@ public class Main{
                     boolean tornar = false;
                     while(!tornar){
 
-                        System.out.println("\nVoleu veure el primer o darrer cognom de la llista?\n");
-                        System.out.println("Primer/Darrer\n");
+                        System.out.println(VERD + "\nVoleu veure el primer o darrer cognom de la llista?\n" + BLANC );
+                        System.out.println(VERD + "Primer/Darrer\n" + BLANC );
                         String resposta = entrada.next();
                     
                         if(resposta.compareToIgnoreCase("primer") == 0){
                                 
-                            System.out.println("\n" + agenda[0]);
+                            System.out.println(VIOLETA + "\n" + agenda[0] + BLANC);
                             tornar = true;
                             
                         }else if(resposta.compareToIgnoreCase("darrer") == 0) {
                                 
-                            System.out.println("\n" + agenda[nalumnes - 1 ]);
+                            System.out.println(VIOLETA + "\n" + agenda[nalumnes - 1 ] + BLANC);
                             tornar = true;
 
                         }else {
 
-                            System.out.println("\nIntrodueix primer o darrer, perfavor!\n");
+                            System.out.println(VERD + "\nIntrodueix primer o darrer, perfavor!\n" + BLANC );
                             
                         }
                     }
@@ -155,11 +156,11 @@ public class Main{
                 //Imprimir
                 case 8:
                     if(nalumnes <= 0){
-                        System.out.println("\nNo hi han alumnes per mostrar\n");
+                        System.out.println(VERD + "\nNo hi han alumnes per mostrar\n" + BLANC );
                     }else{
-                        System.out.println("\nAquests són els alumnes actuals:\n");
+                        System.out.println(VERD + "\nAquests són els alumnes actuals:\n" + BLANC );
                         for(int x = 0 ; x < nalumnes ; x++){
-                            System.out.println((x + 1) + "." + agenda[x]);
+                            System.out.println(VIOLETA + (x + 1) + "." + agenda[x] + BLANC);
                         }
                     }
                     System.out.println("");
