@@ -120,6 +120,8 @@ public class Main{
                 //Primer/Darrer
                 case 7:
                     System.out.println("7");
+                    System.out.println(agenda[0]);
+                    System.out.println(agenda.get[agenda.size() -1]);
                     break;
 
                 //Imprimir
