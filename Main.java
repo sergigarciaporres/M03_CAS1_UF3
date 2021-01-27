@@ -82,7 +82,25 @@ public class Main{
 
                 //Localitzar
                 case 2:
-                    System.out.println("2");
+                    boolean tornar = false;
+                while(!tornar){
+                    System.out.println("\nEntra un cognom de la llista:\n");
+                    String cognom = entrada.next();
+                    boolean trobat = false;
+                    
+                        for(int x = 0 ; x < nalumnes ; x++){
+                            if(agenda[x].equals(cognom)){
+                            System.out.println("\n Està a la posició: " + (x + 1));
+                            trobat = true;
+                            tornar = true;
+                            }
+                        }
+
+                        if(!trobat){
+                        System.out.println("L'element "+ cognom + " no està a la llista");
+                        tornar = false;
+                        }
+                }
                     break;
 
                 //Recuperar
