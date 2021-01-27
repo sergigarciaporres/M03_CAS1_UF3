@@ -58,7 +58,8 @@ public class Main{
             System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "  " + "10. Sortir" + "        " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
             System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "                    " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
             System.out.println(BLAU_FLUIX_SUBRRALLAT + "                        "+ BLANC);
-             
+            System.out.println(" ");
+          
             opcio = entrada.nextInt();
             
             //Opcions del menú
@@ -104,24 +105,51 @@ public class Main{
                 //Anular
                 case 6:
                     System.out.println("\nAquests són els alumnes actuals:\n");
+                    
                     for(int x = 0 ; x < nalumnes ; x++){
+                       
                         System.out.println((x + 1) + "." + agenda[x]);
                     }
+                    
                     System.out.println("\nEstàs segur de voler borrar tota l'agenda?\n");
                     System.out.println("Si/No\n");
                     String si = entrada.next();
+                    
                     if(si.compareToIgnoreCase("si") == 0){
+                        
                         nalumnes = 0;
                         
-
                     }                       
                     break;
                     
                 //Primer/Darrer
                 case 7:
-                    System.out.println("7");
-                    System.out.println(agenda[0]);
-                    System.out.println(agenda.get[agenda.size() -1]);
+
+                    boolean tornar = false;
+                    while(!tornar){
+
+                        System.out.println("\nVoleu veure el primer o darrer cognom de la llista?\n");
+                        System.out.println("Primer/Darrer\n");
+                        String resposta = entrada.next();
+                    
+                        if(resposta.compareToIgnoreCase("primer") == 0){
+                                
+                            System.out.println("\n" + agenda[0]);
+                            tornar = true;
+                            
+                        }else if(resposta.compareToIgnoreCase("darrer") == 0) {
+                                
+                            System.out.println("\n" + agenda[nalumnes - 1 ]);
+                            tornar = true;
+
+                        }else {
+
+                            System.out.println("\nIntrodueix primer o darrer, perfavor!\n");
+                            
+                        }
+                    }
+                    
+                    
                     break;
 
                 //Imprimir
