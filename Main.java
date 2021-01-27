@@ -39,6 +39,7 @@ public class Main{
 
         //Menú principal
         while(!sortir){
+            //Decoració menú
             System.out.println("");
             System.out.println(BLAU_FLUIX_SUBRRALLAT + "                        "+ BLANC);
             System.out.println(BLAU_FLUIX_SUBRRALLAT + "  " + BLANC + "                    " + BLAU_FLUIX_SUBRRALLAT + "  " + BLANC );
@@ -64,10 +65,13 @@ public class Main{
             
             //Opcions del menú
             switch(opcio){
+
                 //Inserir FALTA ACABAR
                 case 1:
+
                  /* Si llista plena 
                     ** informar que no es pot inserir o que s'esborraran dades */
+                   
                     /* cas contrari 
                    
                 Insereix element x en la posició p (p és una posició coherent els elements es desplacen a la dreta, si cal)
