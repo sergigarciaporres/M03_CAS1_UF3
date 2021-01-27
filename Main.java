@@ -73,9 +73,11 @@ public class Main{
                 Insereix element x en la posició p (p és una posició coherent els elements es desplacen a la dreta, si cal)
                 Augmenta en 1 controlador de numero d’elements
                 Imprimeix llista després de la inserció*/
-                    System.out.println( VERD + "Posa un cognom d'un alumne" + BLANC );
-                    nalumnes ++;
+                    System.out.println( VERD + "\nPosa un cognom d'un alumne\n" + BLANC );
+                    
                     agenda[nalumnes] = entrada.next();
+                    nalumnes ++;
+                    
                     break;
 
                 //Localitzar
