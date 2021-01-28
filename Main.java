@@ -1,4 +1,5 @@
-import java.util.*; 
+import java.util.*;
+import java.util.jar.Attributes.Name; 
 public class Main{
     public static void main(String[] args) {
 
@@ -121,11 +122,9 @@ public class Main{
 
                     break;
 
-                //Suprimir nombre FALTA ACABAR
+                //Suprimir posició FALTA ACABAR
                 case 4:
-
-                    case 4:
-                    boolean no_llistat = false;
+                    boolean No_llistat = false;
                     System.out.println( VERD + "\nAquests són els alumnes actuals:\n" + BLANC );
 
                     for(int x = 0 ; x < nalumnes ; x++){
@@ -134,31 +133,45 @@ public class Main{
 
                     }
 
-                    System.out.println( VERD + "Escriu la posició de la llista que voleu eliminar:\n" + BLANC );
-                    int posicio = entrada.nextInt();
+                    while(!No_llistat){
 
-                    if( posicio < nalumnes ){
+                        System.out.println( VERD + "Escriu la posició de la llista que voleu eliminar:\n" + BLANC );
+                        int posicio = entrada.nextInt();
 
-                        System.out.println( VERD + "La posició introduïda no pertany a cap alumne, voleu introduir una altra posició?\n" + BLANC );
-                        System.out.println( VERD + "Si/No\n" + BLANC );
-                        String si = entrada.next();
+                        if( posicio > nalumnes ){
+
+                            System.out.println( VERD + "La posició introduïda no pertany a cap alumne, voleu introduir una altra posició?\n" + BLANC );
+                            System.out.println( VERD + "Si/No\n" + BLANC );
+                            String si = entrada.next();
                     
-                    if(si.compareToIgnoreCase("si") == 0){
-                    
-                        
+                            if(si.compareToIgnoreCase("si") == 0){
+                            
+                                No_llistat = false;
 
-                    }
+                            }else if(si.compareToIgnoreCase("no") == 0){
 
-                    }else {
+                                System.out.println( "\n" + VERD +"Has sortit correctament del menú suprimir." + BLANC + "\n"  );
+                                No_llistat = true;
+
+                            }
+
+                        }else {
 
                         nalumnes = posicio;
                         System.out.println( "\n" + VIOLETA +"S'ha eliminat correctament de la posició " + posicio + " el alumne: "+ agenda[nalumnes - 1 ] + BLANC + "\n"  );
+                        No_llistat = true;
     
                     }
+                        
+                    }
+                    
+
+                    
+                    
 
                     break;
 
-                //Suprimir dada
+                //Suprimir nombre
                 case 5:
 
                     System.out.println("5");
