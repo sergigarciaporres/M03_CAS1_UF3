@@ -124,15 +124,37 @@ public class Main{
                 //Suprimir nombre FALTA ACABAR
                 case 4:
 
+                    case 4:
+                    boolean no_llistat = false;
                     System.out.println( VERD + "\nAquests són els alumnes actuals:\n" + BLANC );
 
-                    for(int x = 0 ; x <= nalumnes ; x++){
+                    for(int x = 0 ; x < nalumnes ; x++){
 
                         System.out.println( VIOLETA + (x + 1) + "." + agenda[x] + BLANC );
 
                     }
 
-                    System.out.println( VERD + "Escriu el nombre de l'alumne que voleu eliminar:" + BLANC );
+                    System.out.println( VERD + "Escriu la posició de la llista que voleu eliminar:\n" + BLANC );
+                    int posicio = entrada.nextInt();
+
+                    if( posicio < nalumnes ){
+
+                        System.out.println( VERD + "La posició introduïda no pertany a cap alumne, voleu introduir una altra posició?\n" + BLANC );
+                        System.out.println( VERD + "Si/No\n" + BLANC );
+                        String si = entrada.next();
+                    
+                    if(si.compareToIgnoreCase("si") == 0){
+                    
+                        
+
+                    }
+
+                    }else {
+
+                        nalumnes = posicio;
+                        System.out.println( "\n" + VIOLETA +"S'ha eliminat correctament de la posició " + posicio + " el alumne: "+ agenda[nalumnes - 1 ] + BLANC + "\n"  );
+    
+                    }
 
                     break;
 
