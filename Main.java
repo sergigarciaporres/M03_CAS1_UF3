@@ -144,7 +144,65 @@ public class Main{
                 //Recuperar
                 case 3:
 
-                    System.out.println("3");
+                    boolean noLlistat = false;
+                        
+                    if(nalumnes <= 0){
+
+                        System.out.println( VERD + "\nLa llista està buida.\n" + BLANC );
+                        noLlistat = true;
+
+                    }else {
+
+                        while(!noLlistat){
+                        
+                            System.out.println( VERD + "\nEntra una posició de la llista:\n" + BLANC );
+                            int posicioDelCognom = entrada.nextInt();
+                            boolean trobatPosicio = false;
+                            int contadorPosicioArray = 0;
+                            for(int x = 0 ; x < nalumnes ; x++){
+                                
+                                while(contadorPosicioArray < posicioDelCognom){
+                                    contadorPosicioArray++;
+                                }
+                                System.out.println( VIOLETA + "\n A la posicio " + BLANC + posicioDelCognom + VIOLETA + " està el cognom: " + BLANC + agenda[contadorPosicioArray] );
+                            trobatPosicio = true;
+                            noLlistat = true;
+                                break;
+                                
+                            }
+
+                            
+
+                            if(!trobatPosicio){
+    
+                                System.out.println( VIOLETA + "\nL'element " + BLANC + posicioDelCognom + VIOLETA + " no està a la llista, voleu introduir una altra posicio?" + BLANC );
+                                System.out.println( VERD + "\nSi/No\n" + BLANC );
+                                String si_recuperar = entrada.next();
+                                
+                                if(si_recuperar.compareToIgnoreCase("si") == 0){
+                                
+                                    noLlistat = false;
+                                    trobatPosicio = false;
+    
+                                }else if(si_recuperar.compareToIgnoreCase("no") == 0){
+    
+                                    System.out.println( "\n" + VERD +"Has sortit correctament del menú Localitzar." + BLANC + "\n"  );
+                                    noLlistat = true;
+                                    trobatPosicio = true;
+    
+                                }
+                            }
+                        }
+                    }
+
+
+
+
+
+
+
+
+
 
                     break;
 
