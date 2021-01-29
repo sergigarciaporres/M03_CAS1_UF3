@@ -159,19 +159,18 @@ public class Main{
                             int posicioDelCognom = entrada.nextInt();
                             boolean trobatPosicio = false;
                             int contadorPosicioArray = 0;
+
                             for(int x = 0 ; x < nalumnes ; x++){
                                 
                                 while(contadorPosicioArray < posicioDelCognom){
                                     contadorPosicioArray++;
                                 }
-                                System.out.println( VIOLETA + "\n A la posicio " + BLANC + posicioDelCognom + VIOLETA + " està el cognom: " + BLANC + agenda[contadorPosicioArray] );
-                            trobatPosicio = true;
-                            noLlistat = true;
-                                break;
-                                
-                            }
 
-                            
+                                System.out.println( VIOLETA + "\n A la posicio " + BLANC + posicioDelCognom + VIOLETA + " està el cognom: " + BLANC + agenda[contadorPosicioArray] );
+                                trobatPosicio = true;
+                                noLlistat = true;
+                                break;
+                            }
 
                             if(!trobatPosicio){
     
@@ -186,7 +185,7 @@ public class Main{
     
                                 }else if(si_recuperar.compareToIgnoreCase("no") == 0){
     
-                                    System.out.println( "\n" + VERD +"Has sortit correctament del menú Localitzar." + BLANC + "\n"  );
+                                    System.out.println( "\n" + VERD +"Has sortit correctament del menú Recuperar." + BLANC + "\n"  );
                                     noLlistat = true;
                                     trobatPosicio = true;
     
@@ -194,15 +193,6 @@ public class Main{
                             }
                         }
                     }
-
-
-
-
-
-
-
-
-
 
                     break;
 
