@@ -1,24 +1,36 @@
 import java.util.*;
-import java.util.jar.Attributes.Name; 
+import java.util.jar.Attributes.Name;
+
+import javax.lang.model.util.ElementScanner6; 
 public class Main{
     private static int i;
 
 	public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
+
         //Sortida menú
         boolean sortir = false;
+
         //Nombre de la opció elegida
         int opcio;
+
         // Compta el número d'alumnes que tenim a agenda
-        int nalumnes = 5;
+        int nAlumnes = 5;
+
+        //Mida de màxima de l'array
         final int MIDA = 50;
+
+        //Declarar el array amb la mida màxima
         String[] agenda = new String [MIDA];
         agenda[0] = "Garcia";
         agenda[1] = "Roman";
         agenda[2] = "Pasalamar";
         agenda[3] = "Rkouni";
         agenda[4] = "Girbes";
+        
+        //Opció de resposta simple dintre de les funcions del programa
+        String resposta;
         
 
 
@@ -42,6 +54,7 @@ public class Main{
 
         //Menú principal
         while(!sortir){
+            
             //Decoració menú
             System.out.println("");
             System.out.println(BLAU_FLUIX_SUBRRALLAT + "                        "+ BLANC);
@@ -83,115 +96,156 @@ public class Main{
 
                     System.out.println( VERD + "\nPosa un cognom d'un alumne\n" + BLANC );
                     
-                    agenda[nalumnes] = entrada.next();
-                    nalumnes ++;
+                    agenda[nAlumnes] = entrada.next();
+                    nAlumnes ++;
 
                 break;
 
                 //Localitzar
                 case 2:
-                
-                    boolean no_llistat = false;
-                    
-                    if(nalumnes <= 0){
 
-                        System.out.println( VERD + "\nLa llista està buida.\n" + BLANC );
-                        no_llistat = true;
+                    boolean tornarLocalitzar = false;
+                    while(!tornarLocalitzar){
 
-                    }else {
+                        //Dona opcio de sortir de la funció sense haver d'utilitzar-la
+                        System.out.println("Vols continuar amb aquesta operació? Si/No");
+                        System.out.println( VERD + "\nSi/No\n" + BLANC );
+                        resposta = entrada.next();
 
-                        while(!no_llistat){
+                        //Si es dona una resposta afirmativa(si/SI/Si) es fa la funció
+                        if(resposta.compareToIgnoreCase("si") == 0){
+                                    
+                            boolean no_llistat = false;
                         
-                            System.out.println( VERD + "\nEntra un cognom de la llista:\n" + BLANC );
-                            String cognom = entrada.next();
-                            boolean trobat = false;
-                            
-                            for(int x = 0 ; x < nalumnes ; x++){
+                            if(nAlumnes <= 0){
+        
+                                System.out.println( VERD + "\nLa llista està buida.\n" + BLANC );
+                                no_llistat = true;
+        
+                            }else {
+        
+                                while(!no_llistat){
                                 
-                                if(agenda[x].equals(cognom)){
-                               
-                                    System.out.println( VIOLETA + "\n El cognom " + BLANC + cognom + VIOLETA + " està a la posició: " + BLANC + (x + 1) );
-                                    trobat = true;
-                                    no_llistat = true;
-    
+                                    System.out.println( VERD + "\nEntra un cognom de la llista:\n" + BLANC );
+                                    String cognom = entrada.next();
+                                    boolean trobat = false;
+                                    
+                                    for(int x = 0 ; x < nAlumnes ; x++){
+                                        
+                                        if(agenda[x].equals(cognom)){
+                                    
+                                            System.out.println( VIOLETA + "\n El cognom " + BLANC + cognom + VIOLETA + " està a la posició: " + BLANC + (x + 1) );
+                                            trobat = true;
+                                            no_llistat = true;
+                                            tornarLocalitzar = true;
+            
+                                        }
+                                    }
+            
+                                    if(!trobat){
+            
+                                        System.out.println( VIOLETA + "\nL'element " + BLANC + cognom + VIOLETA + " no està a la llista, voleu introduir una altra cognom?" + BLANC );
+                                        System.out.println( VERD + "\nSi/No\n" + BLANC );
+                                        resposta = entrada.next();
+                                        
+                                        if(resposta.compareToIgnoreCase("si") == 0){
+                                        
+                                            no_llistat = false;
+                                            trobat = false;
+            
+                                        }else if(resposta.compareToIgnoreCase("no") == 0){
+            
+                                            System.out.println( "\n" + VERD +"Has sortit correctament del menú Localitzar.1" + BLANC + "\n"  );
+                                            no_llistat = true;
+                                            trobat = true;
+            
+                                        }
+                                    }
                                 }
                             }
-    
-                            if(!trobat){
-    
-                                System.out.println( VIOLETA + "\nL'element " + BLANC + cognom + VIOLETA + " no està a la llista, voleu introduir una altra cognom?" + BLANC );
-                                System.out.println( VERD + "\nSi/No\n" + BLANC );
-                                String si = entrada.next();
-                                
-                                if(si.compareToIgnoreCase("si") == 0){
-                                
-                                    no_llistat = false;
-                                    trobat = false;
-    
-                                }else if(si.compareToIgnoreCase("no") == 0){
-    
-                                    System.out.println( "\n" + VERD +"Has sortit correctament del menú Localitzar." + BLANC + "\n"  );
-                                    no_llistat = true;
-                                    trobat = true;
-    
-                                }
-                            }
+                        
+                         
+                                               
+                        //Si es dona una resposta negativa(no/NO/No) surt de la funció i torna al menú principal
+                        }else if(resposta.compareToIgnoreCase("no") == 0){
+
+                            System.out.println( "\n" + VERD +"Has sortit correctament del menú Localitzar." + BLANC + "\n"  );
+                            tornarLocalitzar = true;
+                            break;
+                        
+                        }else{
+                            System.out.println("Hola");
                         }
                     }
                 
-                    break;
+                    
 
                 //Recuperar
                 case 3:
 
-                    boolean noLlistat = false;
+                    //Dona opcio de sortir de la funció sense haver d'utilitzar-la
+                    System.out.println("Vols continuar amb aquesta operació? Si/No");
+                    System.out.println( VERD + "\nSi/No\n" + BLANC );
+                    resposta = entrada.next();
+
+                    //Si es dona una resposta afirmativa(si/SI/Si) es fa la funció
+                    if(resposta.compareToIgnoreCase("si") == 0){
+
+                        boolean noLlistat = false;
                         
-                    if(nalumnes <= 0){
+                        if(nAlumnes <= 0){
 
-                        System.out.println( VERD + "\nLa llista està buida.\n" + BLANC );
-                        noLlistat = true;
+                            System.out.println( VERD + "\nLa llista està buida.\n" + BLANC );
+                            noLlistat = true;
 
-                    }else {
+                        }else {
 
-                        while(!noLlistat){
-                        
-                            System.out.println( VERD + "\nEntra una posició de la llista:\n" + BLANC );
-                            int posicioDelCognom = entrada.nextInt();
-                            boolean trobatPosicio = false;
-                            int contadorPosicioArray = 0;
+                            while(!noLlistat){
+                            
+                                System.out.println( VERD + "\nEntra una posició de la llista:\n" + BLANC );
+                                int posicioDelCognom = entrada.nextInt();
+                                boolean trobatPosicio = false;
+                                int contadorPosicioArray = 0;
 
-                            for(int x = 0 ; x < nalumnes ; x++){
-                                
-                                while(contadorPosicioArray < posicioDelCognom){
-                                    contadorPosicioArray++;
+                                for(int x = 0 ; x < nAlumnes ; x++){
+                                    
+                                    while(contadorPosicioArray < posicioDelCognom){
+                                        contadorPosicioArray++;
+                                    }
+
+                                    System.out.println( VIOLETA + "\n A la posicio " + BLANC + posicioDelCognom + VIOLETA + " està el cognom: " + BLANC + agenda[contadorPosicioArray] );
+                                    trobatPosicio = true;
+                                    noLlistat = true;
+                                    break;
                                 }
 
-                                System.out.println( VIOLETA + "\n A la posicio " + BLANC + posicioDelCognom + VIOLETA + " està el cognom: " + BLANC + agenda[contadorPosicioArray] );
-                                trobatPosicio = true;
-                                noLlistat = true;
-                                break;
-                            }
-
-                            if(!trobatPosicio){
-    
-                                System.out.println( VIOLETA + "\nL'element " + BLANC + posicioDelCognom + VIOLETA + " no està a la llista, voleu introduir una altra posicio?" + BLANC );
-                                System.out.println( VERD + "\nSi/No\n" + BLANC );
-                                String si_recuperar = entrada.next();
-                                
-                                if(si_recuperar.compareToIgnoreCase("si") == 0){
-                                
-                                    noLlistat = false;
-                                    trobatPosicio = false;
-    
-                                }else if(si_recuperar.compareToIgnoreCase("no") == 0){
-    
-                                    System.out.println( "\n" + VERD +"Has sortit correctament del menú Recuperar." + BLANC + "\n"  );
-                                    noLlistat = true;
-                                    trobatPosicio = true;
-    
+                                if(!trobatPosicio){
+        
+                                    System.out.println( VIOLETA + "\nL'element " + BLANC + posicioDelCognom + VIOLETA + " no està a la llista, voleu introduir una altra posicio?" + BLANC );
+                                    System.out.println( VERD + "\nSi/No\n" + BLANC );
+                                    resposta = entrada.next();
+                                    
+                                    if(resposta.compareToIgnoreCase("si") == 0){
+                                    
+                                        noLlistat = false;
+                                        trobatPosicio = false;
+        
+                                    }else if(resposta.compareToIgnoreCase("no") == 0){
+        
+                                        System.out.println( "\n" + VERD +"Has sortit correctament del menú Recuperar." + BLANC + "\n"  );
+                                        noLlistat = true;
+                                        trobatPosicio = true;
+        
+                                    }
                                 }
                             }
                         }
+                    //Si es dona una resposta negativa(no/NO/No) surt de la funció i torna al menú principal
+                    }else if(resposta.compareToIgnoreCase("no") == 0){
+
+                        System.out.println( "\n" + VERD +"Has sortit correctament del menú Localitzar." + BLANC + "\n"  );
+
+                        break;
                     }
 
                     break;
@@ -200,7 +254,7 @@ public class Main{
                 case 4:
                     boolean No_llistat = false;
                     
-                    if(nalumnes <= 0){
+                    if(nAlumnes <= 0){
 
                         System.out.println( VERD + "\nLa llista està buida.\n" + BLANC );
                         No_llistat = true;
@@ -208,7 +262,7 @@ public class Main{
                     }else{
 
                         System.out.println( VERD + "\nAquests són els cognoms actuals:\n" + BLANC );
-                        for(int x = 0 ; x < nalumnes ; x++){
+                        for(int x = 0 ; x < nAlumnes ; x++){
                         System.out.println( VIOLETA + (x + 1) + "." + agenda[x] + BLANC );
 
                         }
@@ -218,17 +272,17 @@ public class Main{
                             System.out.println( VERD + "\nEscriu la posició de la llista que voleu eliminar:\n" + BLANC );
                             int posicio = entrada.nextInt();
 
-                            if( posicio > nalumnes ){
+                            if( posicio > nAlumnes ){
 
                                 System.out.println( VERD + "\nLa posició introduïda no pertany a cap cognom, voleu introduir una altra posició?\n" + BLANC );
                                 System.out.println( VERD + "Si/No\n" + BLANC );
-                                String si = entrada.next();
+                                resposta = entrada.next();
                         
-                                if(si.compareToIgnoreCase("si") == 0){
+                                if(resposta.compareToIgnoreCase("si") == 0){
                                 
                                     No_llistat = false;
 
-                                }else if(si.compareToIgnoreCase("no") == 0){
+                                }else if(resposta.compareToIgnoreCase("no") == 0){
 
                                     System.out.println( "\n" + VERD +"Has sortit correctament del menú suprimir." + BLANC + "\n"  );
                                     No_llistat = true;
@@ -241,13 +295,13 @@ public class Main{
                             
                             System.out.println( "\n" + VIOLETA +"S'ha eliminat correctament de la posició " + BLANC + posicio + VIOLETA + " el cognom: " + BLANC + agenda[ posicio - 1] + "\n"  );
                             
-                            for ( int x = posicio -1; x < nalumnes; x++ ){
+                            for ( int x = posicio -1; x < nAlumnes; x++ ){
 
                                 agenda[ x ] = agenda[ x +1 ];
 
                             }
 
-                            nalumnes --;
+                            nAlumnes --;
                             No_llistat = true;
         
                             }
@@ -261,7 +315,7 @@ public class Main{
 
                     boolean NO_llistat = false;
                     
-                    if(nalumnes <= 0){
+                    if(nAlumnes <= 0){
 
                         System.out.println( VERD + "\nLa llista està buida.\n" + BLANC );
                         NO_llistat = true;
@@ -269,7 +323,7 @@ public class Main{
                     }else{
 
                         System.out.println( VERD + "\nAquests són els cognoms actuals:\n" + BLANC );
-                        for(int x = 0 ; x < nalumnes ; x++){
+                        for(int x = 0 ; x < nAlumnes ; x++){
                         System.out.println( VIOLETA + (x + 1) + "." + agenda[x] + BLANC );
 
                         }
@@ -280,19 +334,19 @@ public class Main{
                             String cognom = entrada.next();
                             boolean Trobat = false;
                             
-                            for(int x = 0 ; x < nalumnes ; x++){
+                            for(int x = 0 ; x < nAlumnes ; x++){
                                 
                                 if(agenda[x].equals(cognom)){
                                
                                     System.out.println( "\n" + VIOLETA +"S'ha eliminat correctament el cognom "  + BLANC + cognom + VIOLETA + " de la posició " + BLANC + ( x + 1 ) + "\n" );
                             
-                                    for ( int i = x; i < nalumnes; i++ ){
+                                    for ( int i = x; i < nAlumnes; i++ ){
 
                                     agenda[ i ] = agenda[ i + 1 ];
 
                                     }
 
-                                    nalumnes --;
+                                    nAlumnes --;
                                     NO_llistat = true;
                                     Trobat = true;
     
@@ -300,14 +354,14 @@ public class Main{
     
                                     System.out.println( VIOLETA + "\nEl cognom " + BLANC + cognom + VIOLETA + " no està a la llista, voleu introduir una altra cognom?" + BLANC );
                                     System.out.println( VERD + "\nSi/No\n" + BLANC );
-                                    String si = entrada.next();
+                                    resposta = entrada.next();
                                     
-                                    if(si.compareToIgnoreCase("si") == 0){
+                                    if(resposta.compareToIgnoreCase("si") == 0){
                                     
                                         NO_llistat = false;
                                         Trobat = true;
         
-                                    }else if(si.compareToIgnoreCase("no") == 0){
+                                    }else if(resposta.compareToIgnoreCase("no") == 0){
         
                                         System.out.println( "\n" + VERD +"Has sortit correctament del menú Suprimir Dada." + BLANC + "\n"  );
                                         NO_llistat = true;
@@ -324,7 +378,7 @@ public class Main{
                 //Anular
                 case 6:
 
-                    if(nalumnes <= 0){
+                    if(nAlumnes <= 0){
 
                         System.out.println( VERD + "\nLa llista està buida.\n" + BLANC );
 
@@ -332,7 +386,7 @@ public class Main{
 
                         System.out.println( VERD + "\nAquests són els cognoms actuals:\n" + BLANC );
                     
-                        for(int x = 0 ; x < nalumnes ; x++){
+                        for(int x = 0 ; x < nAlumnes ; x++){
                        
                             System.out.println( VIOLETA + (x + 1) + "." + agenda[x] + BLANC );
 
@@ -340,14 +394,14 @@ public class Main{
                     
                         System.out.println( VERD + "\nEstàs segur de voler borrar tota l'agenda?\n" + BLANC );
                         System.out.println( VERD + "Si/No\n" + BLANC );
-                        String si = entrada.next();
+                        resposta = entrada.next();
                         
-                        if(si.compareToIgnoreCase("si") == 0){
+                        if(resposta.compareToIgnoreCase("si") == 0){
                             
-                            nalumnes = 0;
+                            nAlumnes = 0;
                             System.out.println( VERD + "\nLa llista ha estat esborrada correctament!\n" + BLANC );
                             
-                        }else if(si.compareToIgnoreCase("no") == 0){
+                        }else if(resposta.compareToIgnoreCase("no") == 0){
 
                             System.out.println( "\n" + VERD +"Has sortit correctament del menú Anular." + BLANC + "\n"  );
 
@@ -360,22 +414,22 @@ public class Main{
                 //Primer/Darrer
                 case 7:
 
-                    boolean tornar = false;
-                    while(!tornar){
+                    boolean tornarPrimerDarrer = false;
+                    while(!tornarPrimerDarrer){
 
                         System.out.println( VERD + "\nVoleu veure el primer o darrer cognom de la llista?\n" + BLANC );
                         System.out.println( VERD + "Primer/Darrer\n" + BLANC );
-                        String resposta = entrada.next();
+                        resposta = entrada.next();
                     
                         if(resposta.compareToIgnoreCase("primer") == 0){
                                 
                             System.out.println( VIOLETA + "\n" + agenda[0] + BLANC );
-                            tornar = true;
+                            tornarPrimerDarrer = true;
                             
                         }else if(resposta.compareToIgnoreCase("darrer") == 0) {
                                 
-                            System.out.println( VIOLETA + "\n" + agenda[nalumnes - 1 ] + BLANC );
-                            tornar = true;
+                            System.out.println( VIOLETA + "\n" + agenda[nAlumnes - 1 ] + BLANC );
+                            tornarPrimerDarrer = true;
 
                         }else {
 
@@ -390,7 +444,7 @@ public class Main{
                 //Imprimir
                 case 8:
 
-                    if(nalumnes <= 0){
+                    if(nAlumnes <= 0){
 
                         System.out.println( VERD + "\nNo hi han alumnes per mostrar\n" + BLANC );
 
@@ -398,7 +452,7 @@ public class Main{
 
                         System.out.println( VERD + "\nAquests són els alumnes actuals:\n" + BLANC );
 
-                        for(int x = 0 ; x < nalumnes ; x++){
+                        for(int x = 0 ; x < nAlumnes ; x++){
 
                             System.out.println( VIOLETA + (x + 1) + "." + agenda[x] + BLANC );
 
