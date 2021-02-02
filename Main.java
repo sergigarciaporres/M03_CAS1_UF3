@@ -5,18 +5,34 @@ public class Main{
 
 	public static void main(String[] args) {
 
+        //Clase per ingresar dades per teclat
         Scanner entrada = new Scanner(System.in);
+        
         //Sortida menú
         boolean sortir = false;
+
+        //Sortida dels diferents menus interns
         boolean finalitzar = false;
+
+        //
         boolean trobat = false;
+
+        //Variable on és guarda les respostes de l'usuari
         String resposta;
+
+        //Variable on és guarda la posicio introduida per l'usuari
         int posicio;
+
         //Nombre de la opció elegida
         int opcio;
+
         // Compta el número d'alumnes que tenim a agenda
         int nAlumnes = 0;
+
+        //Mida de la llista
         final int MIDA = 50;
+
+        //Array on es guarda les diferents cognoms
         String[] agenda = new String [MIDA];     
 
         //Colors i subratllat
@@ -39,6 +55,7 @@ public class Main{
 
         //Menú principal
         while(!sortir){
+
             //Decoració menú
             System.out.println("");
             System.out.println(BLAU_FLUIX_SUBRRALLAT + "                        "+ BLANC);
@@ -61,12 +78,12 @@ public class Main{
             System.out.println(BLAU_FLUIX_SUBRRALLAT + "                        "+ BLANC);
             System.out.println(" ");
           
+            //
             opcio = entrada.nextInt();
             
             //Opcions del menú
             switch(opcio){
 
-                
                 case 1:
                 //Inserir
 
@@ -90,15 +107,14 @@ public class Main{
                                 System.out.println( VERD + "\nVoleu inserir igualment alumnes al llistat?.\n" + BLANC );
                                 System.out.println( VERD + "\nSi/No\n" + BLANC );
 
+                                //Si es dona una resposta negativa(no/NO/No) surt de la funció i torna al menú principal
                                 if(resposta.compareToIgnoreCase("no") == 0){
 
                                     System.out.println( "\n" + VERD +"Has sortit correctament del menú Inserir." + BLANC + "\n"  );
                                     trobat = true;
                                     finalitzar = true;
 
-                                }
-
-                                
+                                }   
 
                             }else{
 
@@ -129,7 +145,8 @@ public class Main{
                                     while(!trobat){
 
                                         String si = entrada.next();
-                                    
+                                        
+                                        //Si es dona una resposta afirmativa(si/SI/Si) es fa la funció
                                         if(si.compareToIgnoreCase("si") == 0){
 
                                             
@@ -154,7 +171,8 @@ public class Main{
                                             }
                                             
                                             trobat = true;
-
+                                        
+                                        //Si es dona una resposta negativa(no/NO/No) surt de la funció i torna al menú principal
                                         }else if(si.compareToIgnoreCase("no") == 0){
 
                                             System.out.println( "\n" + VERD +"Has sortit correctament del menú Localitzar." + BLANC + "\n"  );
@@ -182,7 +200,6 @@ public class Main{
                     }
                 
                     break;
-
                 
                 case 2:
                 //Localitzar
@@ -224,13 +241,13 @@ public class Main{
                                        
                                     }
                                     
-            
                                     if(!trobat){
             
                                         System.out.println( VIOLETA + "\nL'element " + BLANC + cognom + VIOLETA + " no està a la llista, voleu introduir una altra cognom?" + BLANC );
                                         System.out.println( VERD + "\nSi/No\n" + BLANC );
                                         resposta = entrada.next();
 
+                                        //Si es dona una resposta negativa(no/NO/No) surt de la funció i torna al menú principal
                                         if(resposta.compareToIgnoreCase("no") == 0){
             
                                             System.out.println( "\n" + VERD +"Has sortit correctament del menú Localitzar." + BLANC + "\n"  );
@@ -288,7 +305,8 @@ public class Main{
                                     System.out.println( VIOLETA + "\nVoleu introduir una altra posicio?" + BLANC );
                                     System.out.println( VERD + "\nSi/No\n" + BLANC );
                                     resposta = entrada.next();
-                    
+                                    
+                                    //Si es dona una resposta negativa(no/NO/No) surt de la funció i torna al menú principal
                                     if(resposta.compareToIgnoreCase("no") == 0){
                                         
                                         System.out.println( "\n" + VERD +"Has sortit correctament del menú Localitzar." + BLANC + "\n"  );
@@ -364,7 +382,8 @@ public class Main{
                                         System.out.println( VERD + "\nLa posició introduïda no pertany a cap cognom, voleu introduir una altra posició?\n" + BLANC );
                                         System.out.println( VERD + "Si/No\n" + BLANC );
                                         resposta = entrada.next();
-                                
+                                        
+                                        //Si es dona una resposta afirmativa(si/SI/Si) es fa la funció
                                         if(resposta.compareToIgnoreCase("si") == 0){
                                         
                                                                                           
@@ -376,7 +395,7 @@ public class Main{
 
                                                 }
                                             
-                                         
+                                        //Si es dona una resposta negativa(no/NO/No) surt de la funció i torna al menú principal  
                                         }else if(resposta.compareToIgnoreCase("no") == 0){
         
                                             System.out.println( "\n" + VERD +"Has sortit correctament del menú suprimir." + BLANC + "\n"  );
@@ -390,7 +409,8 @@ public class Main{
                                         System.out.println( "\n" + VERD +"Esteu Segurs que voleu suprimir aquesta posició?" + BLANC + "\n"  );
                                         System.out.println( VERD + "Si/No\n" + BLANC );
                                         resposta = entrada.next();
-                                
+                                        
+                                        //Si es dona una resposta afirmativa(si/SI/Si) es fa la funció
                                         if(resposta.compareToIgnoreCase("si") == 0){
 
                                             System.out.println( "\n" + VIOLETA +"S'ha eliminat correctament de la posició " + BLANC + posicio + VIOLETA + " el cognom: " + BLANC + agenda[ posicio - 1] + "\n"  );
@@ -412,6 +432,7 @@ public class Main{
                                                     
                                                 }
                                                 break;
+
                                             }else{
 
                                                 System.out.println( VERD + "\nLa llista està buida.\n" + BLANC );
@@ -421,7 +442,7 @@ public class Main{
                                             }
 
                                             
-                                        
+                                        //Si es dona una resposta negativa(no/NO/No) surt de la funció i torna al menú principal
                                         }else if(resposta.compareToIgnoreCase("no") == 0){
         
                                             System.out.println( "\n" + VERD +"Has sortit correctament del menú suprimir." + BLANC + "\n"  );
@@ -532,10 +553,12 @@ public class Main{
                                         System.out.println( VERD + "\nSi/No\n" + BLANC );
                                         resposta = entrada.next();
 
+                                        //Si es dona una resposta afirmativa(si/SI/Si) es fa la funció
                                         if(resposta.compareToIgnoreCase("si") == 0){
                                             
                                             trobat = false;
 
+                                        //Si es dona una resposta negativa(no/NO/No) surt de la funció i torna al menú principal
                                         }else if(resposta.compareToIgnoreCase("no") == 0){
             
                                             System.out.println( "\n" + VERD +"Has sortit correctament del menú Suprimir Dada." + BLANC + "\n"  );
@@ -593,13 +616,14 @@ public class Main{
                                 System.out.println( VERD + "Si/No\n" + BLANC );
                                 resposta = entrada.next();
                                 
+                                //Si es dona una resposta afirmativa(si/SI/Si) es fa la funció
                                 if(resposta.compareToIgnoreCase("si") == 0){
                                     
                                     nAlumnes = 0;
                                     System.out.println( VERD + "\nLa llista ha estat esborrada correctament!\n" + BLANC );
                                     finalitzar = true;
                                 
-                                    
+                                //Si es dona una resposta negativa(no/NO/No) surt de la funció i torna al menú principal    
                                 }else if(resposta.compareToIgnoreCase("no") == 0){
 
                                     System.out.println( "\n" + VERD +"Has sortit correctament del menú Anular." + BLANC + "\n"  );
@@ -733,13 +757,12 @@ public class Main{
                 case 9:
                 //Ordenar
 
-                    System.out.println("9");
+                    System.out.println( VERD + "Aquest menu no està funcional:(" + BLANC );
 
                     break;
                 
                 case 10:               
                 //Sortir
-
                     //Dona opcio de sortir de la funció sense haver d'utilitzar-la
                     System.out.println( VERD + "\nVols continuar amb aquesta operació?" + BLANC );
                     System.out.println( VERD + "\nSi/No\n" + BLANC );
@@ -758,8 +781,7 @@ public class Main{
               
                     }
                     break;
-                    
-                
+                           
                  default:
                  //Error
 
